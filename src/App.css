@@ -1,0 +1,117 @@
+.container {
+  width: 100%; /* Full width on small screens */
+  padding-right: var(--bs-gutter-x, 1rem); /* Horizontal padding for spacing */
+  padding-left: var(--bs-gutter-x, 1rem);
+  margin-right: auto; /* Centers the container */
+  margin-left: auto; /* Centers the container */
+}
+
+@media (min-width: 576px) {
+  /* Small screens */
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Medium screens */
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Large screens */
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Extra large screens */
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  /* Extra extra large screens */
+  .container {
+    max-width: 1320px;
+  }
+}
+
+.SearchBar {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.table-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Adjust column widths */
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.table-header {
+  display: contents; /* To allow the same grid structure */
+  font-weight: bold;
+}
+
+.table-row {
+  display: contents; /* Same grid structure for each row */
+}
+
+.table-cell {
+  padding: 0.75rem;
+  border-bottom: 1px solid #ccc;
+}
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination-item {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-item:hover {
+  background-color: #f0f0f0;
+}
+
+.pagination-item.active {
+  background-color: #333;
+  color: white;
+  border-color: #333;
+}
+
+.deleteSelectedBtn {
+  background: #ff889e;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+}
