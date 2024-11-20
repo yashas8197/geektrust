@@ -66,12 +66,12 @@ const MembersList = ({
           <div className="table-cell">
             {editId === person.id ? (
               <>
-                <button onClick={handleSave}>Save</button>
+                <button onClick={handleSave}>💾</button>
               </>
             ) : (
-              <button onClick={() => handleEdit(person.id)}>Edit</button>
+              <button onClick={() => handleEdit(person.id)}>📝</button>
             )}
-            <button onClick={() => handleDelete(person.id)}>Delete</button>
+            <button onClick={() => handleDelete(person.id)}>🗑️</button>
           </div>
         </div>
       ))}

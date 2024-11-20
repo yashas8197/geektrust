@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import MembersList from "./components/MembersList";
 import PaginationComponent from "./components/PaginationComponent";
@@ -8,7 +8,6 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedRows, setSelectedRows] = useState([]);
   const [data, setData] = useState([]);
-  const [recordsCopy, setRecordsCopy] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const dataPerPage = 10;
 
@@ -20,7 +19,6 @@ function App() {
     const data = await response.json();
 
     setData(data);
-    setRecordsCopy(data);
   };
 
   useEffect(() => {
@@ -54,7 +52,7 @@ function App() {
   };
 
   const deleteSelected = () => {
-    const updatedData = recordsCopy.filter(
+    const updatedData = data.filter(
       (record) => !selectedRows.includes(record.id)
     );
     setData(updatedData);
@@ -63,15 +61,13 @@ function App() {
 
   const selectAllRows = (e) => {
     if (e.target.checked) {
-      const selectAll = recordsCopy.map((record) => record.id);
+      const selectAll = data.map((record) => record.id);
       setSelectedRows(selectAll);
     } else {
-      const deselectAll = recordsCopy.map((record) => record.id);
+      const deselectAll = data.map((record) => record.id);
       setSelectedRows((prev) => prev.filter((id) => !deselectAll.includes(id)));
     }
   };
-
-  console.log(data);
 
   return (
     <div className="container">
@@ -96,7 +92,7 @@ function App() {
           <MembersList
             data={currentRecord}
             setData={setData}
-            recordsCopy={recordsCopy}
+            recordsCopy={data}
             handleSelectRecords={handleSelectRecords}
             selectedRows={selectedRows}
             setSelectedRows={setSelectedRows}

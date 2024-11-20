@@ -25,13 +25,13 @@ const PaginationComponent = ({
           className={`pagination-item ${currentPage === 1 ? "disabled" : ""}`}
           onClick={handleFirstPage}
         >
-          First
+          &lt;&lt;
         </li>
         <li
           className={`pagination-item ${currentPage === 1 ? "disabled" : ""}`}
           onClick={handlePreviousPage}
         >
-          Previous
+          &lt;
         </li>
         {pageNumber.map((number) => (
           <li
@@ -50,7 +50,7 @@ const PaginationComponent = ({
           }`}
           onClick={handleNextPage}
         >
-          Next
+          &gt;
         </li>
         <li
           className={`pagination-item ${
@@ -58,7 +58,7 @@ const PaginationComponent = ({
           }`}
           onClick={handleLastPage}
         >
-          Last
+          &gt;&gt;
         </li>
       </ul>
     </div>
